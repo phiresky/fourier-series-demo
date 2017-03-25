@@ -93,7 +93,7 @@ class GUI extends React.Component<{}, {}> {
                     <BlockMath math={example.f_x} />
                 </div>
                 <FourierDemo />
-                <footer><small><a href="https://github.com/phiresky/fourier-sums-demo">Source on GitHub</a></small></footer>
+                <footer><small><a href="https://github.com/phiresky/fourier-series-demo">Source on GitHub</a></small></footer>
             </div>
         );
     }
