@@ -51,9 +51,9 @@ class FourierDemo extends React.Component<{}, {}> {
                         />
                     )}
                 </JXGBoard>
-                <p>Displayed in black: <InlineMath math={raw`\frac{4}{x}(${fns.map(fn => fn.tex).join("+")})`} /></p>
+                <p>Displayed in black: <InlineMath math={raw`\frac{4}{\pi}(${fns.map(fn => fn.tex).join("+")})`} /></p>
                 <p style={{ visibility: fns.length > 1 ? "" : "hidden" }}>
-                    Displayed in red: <InlineMath math={raw`\frac{4}{x}(${fns[fns.length - 1].tex})`} />
+                    Displayed in red: <InlineMath math={raw`\frac{4}{\pi}(${fns[fns.length - 1].tex})`} />
                 </p>
             </div>
         )
