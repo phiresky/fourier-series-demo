@@ -5,7 +5,8 @@ import * as mobxReact from "mobx-react";
 import { InlineMath, BlockMath } from 'react-katex';
 import "katex/dist/katex.css";
 import * as raw from "core-js/fn/string/raw";
-import "bootstrap/scss/bootstrap.scss"
+import "bootstrap/scss/bootstrap.scss";
+import "jsxgraph/distrib/jsxgraphcore.js";
 import * as exampleImg from "./example.png";
 import { JXGBoard, FunctionGraph } from './JXG';
 import * as Slider from 'rc-slider';

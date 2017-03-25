@@ -2,7 +2,10 @@ const Html = require('html-webpack-plugin');
 const Template = require('html-webpack-template');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
 
+const prod = process.env.NODE_ENV === "production";
+console.log("building in " + (prod ? "production mode" : "dev mode"));
 module.exports = {
     entry: './main',
     output: {
@@ -44,10 +47,21 @@ module.exports = {
             appMountId: 'app',
             title: 'Fourier Sums Demo',
             inject: false,
-            scripts: [
-                "https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.5/jsxgraphcore.js"
-            ],
-        }), new ExtractTextPlugin("styles.css"),
+            mobile: true
+        }),
+        new ExtractTextPlugin("styles.css"),
+        ...(prod ? [
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('production')
+                }
+            }),
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false
+                }
+            }),
+        ] : [])
     ],
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
