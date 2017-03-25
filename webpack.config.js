@@ -45,7 +45,7 @@ module.exports = {
         new Html({
             template: Template,
             appMountId: 'app',
-            title: 'Fourier Sums Demo',
+            title: 'Fourier Series Demo',
             inject: false,
             mobile: true
         }),

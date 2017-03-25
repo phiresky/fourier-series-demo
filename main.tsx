@@ -75,7 +75,7 @@ class GUI extends React.Component<{}, {}> {
         return (
             <div className="container">
                 <div className="mt-4">
-                    <h1>Fourier Sums demo</h1>
+                    <h1>Fourier series demo</h1>
                     <hr />
                 </div>
                 <ul>
